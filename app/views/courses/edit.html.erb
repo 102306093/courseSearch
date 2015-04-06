@@ -1,26 +1,30 @@
 <h2>Edit this course</h2>
 
 <%= form_for @course do |f|%>
-<div>
-	name
-	<%= f.text_field :name%>
-</div>
-<div>
-	teacher
-	<%= f.text_field :teacher%>
-</div>
-<div>
-	classroom
-	<%= f.text_field :classroom%>
-</div>
-<div>
-	time
-	<%= f.text_field :time%>
-</div>
-<div>
-	credit
-	<%= f.text_field :credit%>
-</div>
+
+<table style="width:70%">
+	<tr>
+		<td>Name</td>
+		<td><%= f.text_field :name%></td>
+  	</tr>
+  	<tr>
+    	<td>Teacher</td>
+		<td><%= f.text_field :teacher%></td>
+  	</tr>
+  	<tr>
+    	<td>Classroom</td>
+		<td><%= f.text_field :classroom%></td>
+  	</tr>
+  	<tr>
+    	<td>Time</td>
+		<td><%= f.text_field :time%></td>
+  	</tr>
+  	<tr>
+    	<td>Credit</td>
+		<td><%= f.text_field :credit%></td>
+  	</tr>
+</table> 
+
 <%= f.submit%>
 
 <%end%>

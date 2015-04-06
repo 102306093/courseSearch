@@ -3,17 +3,21 @@
 <%= link_to "New course", new_course_path %>
 
 <%= form_tag courses_path,method:"get" do%>
-name<%= text_field_tag :name %>
-teacher<%= text_field_tag :teacher %>
-time<%= text_field_tag :time %>
+Name<%= text_field_tag :name %>
+Teacher<%= text_field_tag :teacher %>
+Time<%= text_field_tag :time %>
 <%= submit_tag "search"%>
 <%end%>
 
 <% @courses.each do |course| %>
-<div>
-	<%= link_to course.name, course_path(course) %>
-	<%= link_to "edit", edit_course_path(course) %>
-	<%= link_to "delete", course_path(course),method:"delete" %>
-</div>
+
+<h3><%= course.name %></td></h3>
+<table style="width:50%">
+	<tr>
+		<td><%= link_to "Show", course_path(course) %></td>
+		<td><%= link_to "Edit", edit_course_path(course) %></td>
+		<td><%= link_to "Delete", course_path(course),method:"delete" %></td>
+  	</tr>
+</table> 
 
 <%end%>
