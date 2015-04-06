@@ -1,0 +1,19 @@
+<h2>Courses searching system</h2>
+
+<%= link_to "New course", new_course_path %>
+
+<%= form_tag courses_path,method:"get" do%>
+name<%= text_field_tag :name %>
+teacher<%= text_field_tag :teacher %>
+time<%= text_field_tag :time %>
+<%= submit_tag "search"%>
+<%end%>
+
+<% @courses.each do |course| %>
+<div>
+	<%= link_to course.name, course_path(course) %>
+	<%= link_to "edit", edit_course_path(course) %>
+	<%= link_to "delete", course_path(course),method:"delete" %>
+</div>
+
+<%end%>

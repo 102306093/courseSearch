@@ -1,0 +1,13 @@
+<h2>Add a new course</h2>
+
+<%= form_for @course do |f|%>
+
+Name <%= f.text_field :name%>
+Teacher	<%= f.text_field :teacher%>
+Classroom <%= f.text_field :classroom%>
+Time <%= f.text_field :time%>
+Credit <%= f.text_field :credit%>
+
+<%= f.submit%>
+
+<%end%>
